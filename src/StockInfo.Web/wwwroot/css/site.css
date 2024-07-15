@@ -1,22 +1,75 @@
 html {
-  font-size: 14px;
+    font-size: 14px;
 }
 
 @media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
+    html {
+        font-size: 16px;
+    }
 }
 
 .btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
-  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+    box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
 }
 
 html {
-  position: relative;
-  min-height: 100%;
+    position: relative;
+    min-height: 100%;
 }
 
 body {
-  margin-bottom: 60px;
+    margin-bottom: 60px;
+}
+
+.header_logo {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    background-color: #f8f8f8;
+    border-bottom: 1px solid #ccc;
+}
+
+    .header_logo .logo {
+        padding-top: 4px;
+        display: flex;
+        align-items: center;
+        width: 136px;
+        height: 40px;
+    }
+
+
+.logo img {
+    margin-left: 20px;
+}
+
+.sprite {
+    background-image: url(https://static.mediacdn.vn/cafef.vn/images/sprite_cafef_v18.png) !important;
+    background-repeat: no-repeat;
+    background-size: auto !important;
+}
+
+.maCK {
+    margin-left: auto;
+    z-index: 999;
+    top: 0;
+    background-color: transparent;
+    background: 0 0;
+    right: 0;
+    margin-right: 35px;
+}
+
+.maCK-button {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    cursor: pointer;
+}
+
+    .maCK-button:hover {
+        background-color: #f0f0f0;
+    }
+
+.inner {
+    background: 0 0;
+    padding-bottom: 4px;
 }
