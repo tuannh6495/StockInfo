@@ -1,0 +1,82 @@
+﻿<div class="custom-navbar">
+    <ul>
+        <li>
+            <a href="@Url.Action("HomePage", "Home")">
+                <img src="https://cdn-icons-png.flaticon.com/512/846/846449.png" alt="Icon Home" style="width: 25px; height: auto;" />
+
+            </a>
+        </li>
+        <li><a href="@Url.Action("XaHoi", "Home")">XÃ HỘI</a></li>
+        <li><a href="@Url.Action("ChungKhoan", "Home")">CHỨNG KHOÁN</a></li>
+        <li><a href="@Url.Action("BatDongSan", "Home")">BẤT ĐỘNG SẢN</a></li>
+        <li><a href="@Url.Action("DoanhNghiep", "Home")">DOANH NGHIỆP</a></li>
+        <li><a href="@Url.Action("NganHang", "Home")">NGÂN HÀNG</a></li>
+        <li><a href="@Url.Action("TaiChinhQuocTe", "Home")">TÀI CHÍNH QUỐC TẾ</a></li>
+        <li><a href="@Url.Action("ViMo", "Home")">VĨ MÔ</a></li>
+        <li><a href="@Url.Action("KinhTeSo", "Home")">KINH TẾ SỐ</a></li>
+        <li><a href="@Url.Action("ThiTruong", "Home")">THỊ TRƯỜNG</a></li>
+        <li><a href="@Url.Action("Song", "Home")">SỐNG</a></li>
+        <li><a href="@Url.Action("Lifestyle", "Home")">LIFESTYLE</a></li>
+        <li><a href="@Url.Action("DuLieu", "Home")">Dữ liệu</a></li>
+        <li><a href="@Url.Action("Top200", "Home")">Top200</a></li>
+    </ul>
+</div>
+
+<style>
+    .custom-navbar {
+        background-color: #004370;
+        border: 2px solid #2980b9;
+        padding: 10px 0;
+        border-radius: 5px;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .custom-navbar ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .custom-navbar ul li {
+            margin-right: 15px;
+            font-size: 14px;
+        }
+
+    .custom-navbar ul li:last-child {
+                margin-right: 0;
+            }
+
+    .custom-navbar ul li a {
+                color: #ecf0f1;
+                text-decoration: none;
+            }
+
+    .custom-navbar ul li a:hover {
+                    text-decoration: underline;
+                }
+
+    .navbar-nav .nav-item {
+        position: relative;
+    }
+
+    .navbar-nav .nav-item::before {
+        content: '';
+        position: absolute;
+        bottom: -2px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 0%;
+        height: 2px;
+        background-color: #3498db;
+        transition: width 0.3s ease;
+    }
+
+        .navbar-nav .nav-item:hover::before {
+            width: 100%;
+        }
+</style>
+

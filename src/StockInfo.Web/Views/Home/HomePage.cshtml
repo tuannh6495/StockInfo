@@ -1,0 +1,96 @@
+﻿@{
+    ViewData["Title"] = "Kênh thông tin Kinh tế";
+}
+
+<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+<link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+<link rel="stylesheet" href="~/Views/Style/HomePage.css" asp-append-version="true" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />  
+@* <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" /> *@
+
+<div class="company-intro">
+    <div class="box-title-intro">
+        <div class="intro-head">
+            <div class="title-intro">
+                <p class="title-intro-desc">Thông tin giao dịch</p>
+                <div class="line"></div>
+                <p class="title-intro-stock">DSE (HoSE)</p>
+            </div>
+
+            <div class="search-stock">
+                <div class="search-stock-input">
+                    <input type="text" autocomplete="off" placeholder="Tìm kiếm Mã CK hoặc Tên công ty" />
+                </div>
+                <div class="search-stock-btn">
+                    <i class="fa fa-search fa-3x fa-fw dont-close-when-click" aria-hidden="true"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="conspectus-intro">
+        <div class="intro-banner">
+            <div class="next-slide-image">
+                <div class="next-slide-left">
+                    <div class="circle-next next-left">
+                        <i class="fa fa-angle-left" aria-hidden="true"></i>
+                    </div>
+                </div>
+
+                <div class="next-slide-right">
+                    <div class="circle-next next-right">
+                        <i class="fa fa-angle-right" aria-hidden="true"></i>
+                    </div>
+                </div>
+            </div>
+
+            <img id="banner-image-1" class="banner-item" style="display: none" src="https://cafef1.mediacdn.vn/Images/Uploaded/Share/DSE_20240628161822.png" />
+            <img id="banner-image-2" class="banner-item" style="display: none" src="https://cafef1.mediacdn.vn/Images/Uploaded/Share/DSE_20240628161852.png" />
+            <img id="banner-image-3" class="banner-item" style="display: block" src="https://cafef1.mediacdn.vn/Images/Uploaded/Share/DSE_20240628161908.png" />
+        </div>
+
+        <div class="intro-info">
+            <div class="intro-info-title">
+                <div class="info-title-logo" id="info-company-intro-logo" style="background-image: url("https://cafef1.mediacdn.vn/LOGO/DSE_20240629221050.jpg");"></div>
+                <div class="info-title-content">
+                    <div class="title-name">
+                        <p class="title-content-name">Công ty Cổ phần Chứng khoán DNSE</p>
+                        <div class="icon-official-page">
+                            <img src="https://s.cafef.vn/images/companyPage/icon-official-page.png" />
+                            <a href="https://www.dnse.com.vn" class="des-official-page">
+                                <p>Trang doanh nghiệp chính thức</p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="intro-info-nav">
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script>
+    let currentIndex = 0;
+    const images = document.querySelectorAll('.banner-item');
+
+    function showNextImage() {
+        // Ẩn hình ảnh hiện tại
+        images[currentIndex].style.display = 'none';
+
+        // Tính toán chỉ số hình ảnh tiếp theo
+        currentIndex = (currentIndex + 1) % images.length;
+
+        // Hiển thị hình ảnh tiếp theo
+        images[currentIndex].style.display = 'block';
+    }
+
+    // Hiển thị hình ảnh đầu tiên
+    images[currentIndex].style.display = 'block';
+
+    // Thay đổi hình ảnh mỗi 5 giây
+    setInterval(showNextImage, 5000);
+</script>

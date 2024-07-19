@@ -1,84 +1,4 @@
-html {
-    font-size: 14px;
-}
-
-@media (min-width: 768px) {
-    html {
-        font-size: 16px;
-    }
-}
-
-.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
-    box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
-}
-
-html {
-    position: relative;
-    min-height: 100%;
-}
-
-body {
-    margin-bottom: 60px;
-}
-
-
-
-/*CSS cho header*/
-.header_logo {
-    display: flex;
-    align-items: center;
-    width: 100%;
-    height: auto;
-    background-color: #f8f8f8;
-    border-bottom: 1px solid #ccc;
-}
-
-.header_logo .logo {
-    padding-top: 4px;
-    display: flex;
-    align-items: center;
-    width: 136px;
-    height: 40px;
-}
-
-.logo img {
-    margin-left: 20px;
-}
-
-.sprite {
-    background-image: url(https://static.mediacdn.vn/cafef.vn/images/sprite_cafef_v18.png) !important;
-    background-repeat: no-repeat;
-    background-size: auto !important;
-}
-
-.maCK {
-    margin-left: auto;
-    z-index: 999;
-    top: 0;
-    background-color: transparent;
-    background: 0 0;
-    right: 0;
-    margin-right: 35px;
-}
-
-.maCK-button {
-    background-color: #fff;
-    border: 1px solid #ccc;
-    cursor: pointer;
-}
-
-.maCK-button:hover {
-    background-color: #f0f0f0;
-}
-
-.inner {
-    background: 0 0;
-    padding-bottom: 4px;
-}
-
-
-/*CSS cho HomePage*/
-.box-title-intro {
+﻿.box-title-intro {
     position: absolute;
     left: 0px;
     right: 0px;
@@ -102,7 +22,7 @@ body {
     display: flex;
 }
 
-.title-intro-desc {
+title-intro-desc {
     margin-left: 2px;
     font-style: normal;
     font-weight: 600;
@@ -123,6 +43,7 @@ body {
     line-height: 24px;
     color: #616161;
 }
+
 
 .search-stock {
     width: 380px;
@@ -145,11 +66,11 @@ body {
     width: 291px;
 }
 
-.search-stock-input input {
-    border: 0px;
-    outline: none;
-    width: 100%;
-}
+    .search-stock-input input {
+        border: 0px;
+        outline: none;
+        width: 100%;
+    }
 
 .search-stock-btn {
     background-color: #004370;
@@ -162,11 +83,11 @@ body {
     cursor: pointer;
 }
 
-.search-stock-btn .fa-search {
-    font-size: large !important;
-    color: #f0f0f0;
-    width: 46px;
-}
+    .search-stock-btn .fa-search {
+        font-size: large !important;
+        color: #f0f0f0;
+        width: 46px;
+    }
 
 .intro-banner {
     max-height: 360px;
@@ -283,53 +204,10 @@ body {
     margin: 20px 20px 20px 0px;
 }
 
-.title-name {
-    display: flex;
-    position: relative;
-}
-
 .title-content-name {
     font-style: normal;
     font-weight: 600;
     font-size: 28px;
     line-height: 28px;
     color: #c32022;
-}
-
-.icon-official-page {
-    position: relative;
-}
-
-.icon-official-page img {
-    width: 32px;
-    height: 32px;
-    cursor: pointer;
-}
-
-.desc-official-page {
-    position: absolute;
-    top: 37px;
-    right: -121px;
-    width: auto;
-    padding: 4px 12px;
-    border-radius: 6px;
-    background: rgb(0, 0, 0.1);
-    display: none;
-    z-index: 100;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 11px;
-    line-height: 16px;
-    color: #f4f4f4;
-    cursor: pointer;
-}
-
-.icon-official-page a {
-    text-decoration: none;
-    outline: none;
-    color: #004370;
-}
-
-.desc-official-page p {
-    white-space: nowrap;
 }

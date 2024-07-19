@@ -15,7 +15,6 @@
     height: 40px;
 }
 
-
 .logo img {
     margin-left: 20px;
 }
@@ -49,4 +48,19 @@
 .inner {
     background: 0 0;
     padding-bottom: 4px;
+}
+
+.btn btn-primary dropdown-toggle {
+    background-color: #004370;
+    width: 28px;
+    height: 29px;
+    display: inline-block;
+    margin-top: 5px;
+    right: -35px;
+    position: absolute;
+}
+
+.btn-primary{
+    color: #f0f0f0;
+    background-color:#004370;
 }

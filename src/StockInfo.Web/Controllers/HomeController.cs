@@ -13,7 +13,7 @@ namespace StockInfo.Web.Controllers
             _logger = logger;
         }
 
-        public IActionResult Index()
+        public IActionResult HomePage()
         {
             return View();
         }
@@ -23,10 +23,76 @@ namespace StockInfo.Web.Controllers
             return View();
         }
 
+        public IActionResult XaHoi()
+        {
+            return View();
+        }
+
+        public IActionResult ChungKhoan()
+        {
+            return View();
+        }
+
+        public IActionResult BatDongSan()
+        {
+            return View();
+        }
+
+        public IActionResult DoanhNghiep()
+        {
+            return View();
+        }
+
+        public IActionResult NganHang()
+        {
+            return View();
+        }
+
+        public IActionResult TaiChinhQuocTe()
+        {
+            return View();
+        }
+
+        public IActionResult ViMo()
+        {
+            return View();
+        }
+
+        public IActionResult KinhTeSo()
+        {
+            return View();
+        }
+
+        public IActionResult ThiTruong()
+        {
+            return View();
+        }
+
+        public IActionResult Song()
+        {
+            return View();
+        }
+
+        public IActionResult Lifestyle()
+        {
+            return View();
+        }
+
+        public IActionResult DuLieu()
+        {
+            return View();
+        }
+
+        public IActionResult Top200()
+        {
+            return View();
+        }
+
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
+        
     }
 }
