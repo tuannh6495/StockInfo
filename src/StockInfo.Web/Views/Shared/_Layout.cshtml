@@ -3,44 +3,317 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - StockInfo.Web</title>
+    <title>@ViewData["Title"] </title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/StockInfo.Web.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/WebApplication1.styles.css" asp-append-version="true" />
+    <style>
+
+        .home-button {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #1677b1; /* Màu nền */
+
+            box-sizing: border-box;
+        }
+
+        .home-icon {
+            width: 18px; /* Kích thước biểu tượng ngôi nhà */
+            height: auto;
+        }
+
+        .news-container {
+            width: 32%;
+            height: 175px; /* Đặt chiều cao tối đa cho khung tin tức */
+            overflow-y: auto; /* Tạo thanh cuộn khi nội dung dài */
+            margin: 1px auto;
+            padding: 5px;
+            margin-left: 30%; /* Điều chỉnh giá trị này để dịch bảng sang trái hoặc phải */
+        }
+
+            .news-container::after {
+                content: '';
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                right: 0;
+                width: 1px; /* Độ rộng của đường line */
+                background-color: rgba(0, 0, 0, 0.2); /* Màu sắc của đường line */
+            }
+
+            .news-container::-webkit-scrollbar {
+                width: 16px; /* Độ rộng của thanh cuộn */
+            }
+
+            .news-container::-webkit-scrollbar-track {
+                background: transparent; /* Nền của thanh cuộn */
+            }
+
+            .news-container::-webkit-scrollbar-thumb {
+                background: rgba(0, 0, 0, 0.5); /* Màu của thanh cuộn */
+                border-radius: 4px; /* Bo tròn góc */
+            }
+
+
+
+        .news-header {
+            position: absolute;
+            top: 60px; /* Điều chỉnh vị trí trên/dưới của tiêu đề */
+            left: 30%; /* Điều chỉnh vị trí trái/phải của tiêu đề */
+            color: #c9000c;
+            padding: 5px;
+            text-align: center;
+            font-size: 12px;
+            font-weight: bold;
+        }
+
+        .news-content {
+            padding: 4px;
+        }
+
+        .news-item {
+            margin-bottom: 6px;
+            padding-bottom: 6px;
+            border-bottom: 1px solid #ddd;
+        }
+
+            .news-item:last-child {
+                border-bottom: none;
+            }
+
+            .news-item a {
+                text-decoration: none;
+                color: #333;
+                font-weight: bold;
+                font-size: 12px;
+            }
+
+                .news-item a:hover {
+                    text-decoration: underline;
+                }
+
+        .time {
+            color: #999;
+            font-size: 12px;
+            margin-bottom: 3px;
+            display: inline-block; /* Đặt thời gian và tiêu đề trên cùng một dòng */
+            margin-right: 5px; /* Khoảng cách giữa thời gian và tiêu đề */
+            border-right: 1px solid #ddd; /* Thêm viền ngăn cách */
+            padding-right: 5px; /* Khoảng cách giữa viền và nội dung */
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        .logo-img {
+            width: 136px; /* Đặt chiều rộng của logo */
+            height: 34px; /* Chiều cao tự động tính theo tỷ lệ */
+            /* Nếu bạn muốn đặt kích thước cụ thể cho chiều cao, thay 'auto' thành giá trị cụ thể, ví dụ: height: 50px; */
+        }
+        /* Style the top navigation bar */
+        .topnav {
+            overflow: hidden;
+            background-color: #004370;
+        }
+
+            /* Style the topnav links */
+            .topnav a {
+                float: left;
+                display: block;
+                color: #f2f2f2;
+                text-align: center;
+                padding: 5px 10px;
+                text-decoration: none;
+            }
+
+                /* Change color on hover */
+                .topnav a:hover {
+                    background-color: #ddd;
+                    color: black;
+                }
+
+        /* Create three unequal columns that floats next to each other */
+        .column {
+            float: left;
+            padding: 10px;
+        }
+
+            /* Left and right column */
+            .column.side {
+                width: 10%;
+            }
+
+            /* Middle column */
+            .column.middle {
+                width: 80%;
+            }
+
+        .row::after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        /* Left column */
+        .leftcolumn {
+            float: left;
+            width: 60%;
+        }
+
+        /* Right column */
+        .rightcolumn {
+            float: left;
+            width: 30%;
+        }
+
+        /* Fake image */
+        .fakeimg {
+            background-color: #aaa;
+            width: 100%;
+            padding: 20px;
+        }
+
+        /* Add a card effect for articles */
+        .card {
+            background-color: white;
+            padding: 20px;
+            margin-top: 20px;
+        }
+    </style>
 </head>
 <body>
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">StockInfo.Web</a>
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">
+                    <img class=" logo-img" src="https://cafefcdn.com/web_images/cafef_logo2022.svg" alt="CAFEF Logo">
+                </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                        </li>
                     </ul>
                 </div>
             </div>
         </nav>
     </header>
-    <div class="container">
-        <main role="main" class="pb-3">
-            @RenderBody()
-        </main>
+
+    <div class="news-container">
+        <div class="news-header">
+            MỚI NHẤT!
+        </div>
+        <div class="news-content">
+            <div class="news-item">
+                <div class="time">09:48</div>
+                <a href="#">Đây là món nước khiến "hot mom" vừa hết ở cữ đã phải dẫn con uống ngay cho thỏa thèm</a>
+            </div>
+            <div class="news-item">
+                <div class="time">09:48</div>
+                <a href="#">Đồng hành cùng con thi đỗ trường cấp 2 top đầu, bà mẹ Hà Nội lưu ý 4 điều quan trọng: Điều 1 quyết định thành công hay thất bại</a>
+            </div>
+            <div class="news-item">
+                <div class="time">09:47</div>
+                <a href="#">Đóng BHXH 15 năm: Nên chờ sang năm để hưởng lương hưu?</a>
+            </div>
+            <div class="news-item">
+                <div class="time">09:41</div>
+                <a href="#">Cứ năm sau giảm còn bằng nửa năm trước, đây là phân khúc lao dốc mạnh nhất thị trường ô tô Việt</a>
+            </div>
+            <div class="news-item">
+                <div class="time">09:48</div>
+                <a href="#">Bổ sung thêm tin tức mới</a>
+            </div>
+            <div class="news-item">
+                <div class="time">09:48</div>
+                <a href="#">Thông tin thêm về các sự kiện quan trọng</a>
+            </div>
+            <div class="news-item">
+                <div class="time">09:47</div>
+                <a href="#">Những cập nhật mới nhất về thị trường</a>
+            </div>
+            <div class="news-item">
+                <div class="time">09:41</div>
+                <a href="#">Các bài viết phân tích chuyên sâu</a>
+            </div>
+            <div class="news-item">
+                <div class="time">09:48</div>
+                <a href="#">Thông tin mới nhất từ CAFEF</a>
+            </div>
+            <div class="news-item">
+                <div class="time">09:48</div>
+                <a href="#">Tin tức kinh tế và chính trị</a>
+            </div>
+            <div class="news-item">
+                <div class="time">09:47</div>
+                <a href="#">Các bài viết phân tích thị trường chứng khoán</a>
+            </div>
+            <div class="news-item">
+                <div class="time">09:41</div>
+                <a href="#">Thông tin các doanh nghiệp lớn</a>
+            </div>
+        </div>
     </div>
 
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2024 - StockInfo.Web - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+    <div class="topnav">
+
+
+
+        <a href="@Url.Action("Index", "Home")" class="home-button">
+            <img src="https://cdn-icons-png.flaticon.com/512/846/846449.png" alt="Icon Home" class="home-icon" />
+        </a>
+        <a href="@Url.Action("XaHoi", "Home")"> Xã Hội</a>
+        <a href="@Url.Action("ChungKhoan", "Home")"> Chứng Khoán</a>
+        <a href="@Url.Action("BatDongSan", "Home")"> BẤT ĐỘN SẢN</a>
+        <a href="@Url.Action("DoanhNghiep", "Home")"> DOANH NGHIỆP</a>
+        <a href="@Url.Action("NganHang", "Home")"> NGÂN HÀNG</a>
+        <a href="@Url.Action("TaiChinhQuocTe", "Home")"> TÀI CHÍNH QUỐC TẾ</a>
+        <a href="@Url.Action("ViMo", "Home")"> VĨ MÔ</a>
+        <a href="@Url.Action("KinhTeSo", "Home")"> KINH TẾ SỐ</a>
+        <a href="@Url.Action("ThiTruong", "Home")"> THI TRƯỜNG</a>
+        <a href="@Url.Action("Song", "Home")"> SỐNG</a>
+        <a href="@Url.Action("LifeStyle", "Home")"> LIFESTYLE</a>
+        <a href="@Url.Action("DuLieu", "Home")"> Dữ liệu</a>
+        <a href="@Url.Action("TOP200", "Home")"> Top 200</a>
+
+
+
+
+
+    </div>
+
+    <div class="row">
+        <div class="column side">
+            <h2></h2>
+
         </div>
-    </footer>
+
+        <div class="column middle">
+            <div class="leftcolumn">
+                <div class="container">
+                    <main role="main" class="pb-3">
+                        @RenderBody()
+                    </main>
+                </div>
+            </div>
+            <div class="rightcolumn">
+
+                <div class="fakeimg" style="height:100px;">Image</div>
+                <p>Some text about me in culpa qui officia deserunt mollit anim..</p>
+
+            </div>
+        </div>
+        <div class="column side">
+            <h2></h2>
+
+        </div>
+    </div>
+
+
+
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>

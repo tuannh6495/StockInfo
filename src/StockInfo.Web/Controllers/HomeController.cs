@@ -28,5 +28,70 @@ namespace StockInfo.Web.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
+
+        public IActionResult XaHoi()
+        {
+            return View();
+        }
+
+        public IActionResult ChungKhoan()
+        {
+            return View();
+        }
+
+        public IActionResult BatDongSan()
+        {
+            return View();
+        }
+
+        public IActionResult DoanhNghiep()
+        {
+            return View();
+        }
+
+        public IActionResult NganHang()
+        {
+            return View();
+        }
+
+        public IActionResult TaiChinhQuocTe()
+        {
+            return View();
+        }
+
+        public IActionResult ViMo()
+        {
+            return View();
+        }
+
+        public IActionResult KinhTeSo()
+        {
+            return View();
+        }
+
+        public IActionResult ThiTruong()
+        {
+            return View();
+        }
+
+        public IActionResult Song()
+        {
+            return View();
+        }
+
+        public IActionResult Lifestyle()
+        {
+            return View();
+        }
+
+        public IActionResult DuLieu()
+        {
+            return View();
+        }
+
+        public IActionResult TOP200()
+        {
+            return View();
+        }
     }
 }
